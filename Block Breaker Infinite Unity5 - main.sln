@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4F53B3F0-E49F-50FB-2A53-1EF0676F227E}") = "Block Breaker Infinite Unity5 - main", "Assembly-CSharp.csproj", "{54E93652-BA80-79D8-210D-2AEC5B0BF12D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54E93652-BA80-79D8-210D-2AEC5B0BF12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54E93652-BA80-79D8-210D-2AEC5B0BF12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54E93652-BA80-79D8-210D-2AEC5B0BF12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54E93652-BA80-79D8-210D-2AEC5B0BF12D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
