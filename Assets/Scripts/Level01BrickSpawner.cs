@@ -14,7 +14,7 @@ public class Level01BrickSpawner : MonoBehaviour {
 
 	private float brickXOffset = 2f;
 	private float brickXpos = 1f;
-	private float brickXposIpad = -1f;
+	private float brickXposIpad = 0.25f; // centers the bricks on iPad screens.
 
 	private float brickYOffset = 0.60f;
 	private float brickYpos = 13f;
@@ -40,11 +40,14 @@ public class Level01BrickSpawner : MonoBehaviour {
 		colorsArray[1] = color2;
 		colorsArray[2] = color3;
 
+
+		// change some stats if on an iPhone 4
 		if (Screen.height == 960) {
 			brickYpos = 12f;
 		}
 
-		if (Screen.height == 1024) {
+		// change some stats if on an iPad
+		if (Screen.height == 1024 || Screen.height == 2048) {
 			brickXpos = brickXposIpad;
 			numBricksToSpawn = numBricksToSpawnIpad;
 		}
@@ -97,24 +100,19 @@ public class Level01BrickSpawner : MonoBehaviour {
 
 			}
 
-			/*
-			if (child.transform.position.y > -2f) {
+			// destory bricks that go off the bottom of the screen
+			if (child.transform.position.y < -1f) {
 				Destroy(child.gameObject);
 			}
-			*/
+
 		}
-	
-		if (Screen.height == 1024) {
+
+		// reset the x spwan for the new line
+		if (Screen.height == 1024 || Screen.height == 2048) { // if on an iPad
 			brickXpos = brickXposIpad;
-		} else {
-			// put the brick x position back to the start for the next row sapw
+		} else { // if on an iPhone
 			brickXpos = 1f;	
-			// brickYpos = 13f;
 		}
-		
-
-
-
 
 	}
 

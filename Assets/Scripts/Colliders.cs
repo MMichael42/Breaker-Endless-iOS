@@ -13,8 +13,8 @@ public class Colliders : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
-		if (Screen.height == 1024) {
+		// set the colliders for the ball if the game is being played on an iPad.
+		if (Screen.height == 1024 || Screen.height == 2048) {
 
 			top = GameObject.Find("TopWall");
 			left = GameObject.Find("LeftWall");
@@ -26,8 +26,10 @@ public class Colliders : MonoBehaviour {
 			Vector3 tempRight = right.transform.position;
 
 			tempTop.y = 13.64f;
-			tempLeft.x = 2.67f;
-			tempRight.x = 15.33f;
+			tempTop.x = 5.33f;
+
+			tempLeft.x = 4f;
+			tempRight.x = 16.69f;
 
 			top.transform.position = tempTop;
 			left.transform.position = tempLeft;

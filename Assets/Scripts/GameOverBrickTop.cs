@@ -52,7 +52,7 @@ public class GameOverBrickTop : MonoBehaviour {
 
 		if (Screen.height == 960) {
 			numOfBricksTall = 3;
-		} else if (Screen.height == 1024) {
+		} else if (Screen.height == 1024 || Screen.height == 2048) {
 			numOfBricksTall = 1;
 		} else {
 			numOfBricksTall = 5;
