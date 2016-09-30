@@ -22,6 +22,12 @@ public class ScoreKeeper : MonoBehaviour {
 			Vector3 iPhone4Ypos = transform.position;
 			iPhone4Ypos.y = 914f;
 			scoreText.transform.position = iPhone4Ypos;
+		} else if (screenText == 1024) {
+			Debug.Log("this is an iPad, move the score down");
+
+			Vector3 iPadYpos = transform.position;
+			iPadYpos.y = 950f;
+			scoreText.transform.position = iPadYpos;
 		}
 		
 	}
