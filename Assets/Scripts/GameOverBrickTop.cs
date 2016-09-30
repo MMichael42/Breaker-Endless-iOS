@@ -52,6 +52,8 @@ public class GameOverBrickTop : MonoBehaviour {
 
 		if (Screen.height == 960) {
 			numOfBricksTall = 3;
+		} else if (Screen.height == 1024) {
+			numOfBricksTall = 1;
 		} else {
 			numOfBricksTall = 5;
 		}
@@ -147,7 +149,7 @@ public class GameOverBrickTop : MonoBehaviour {
 
 			}
 
-			if (child.transform.position.x > 10f) {
+			if (child.transform.position.x > 12f) {
 				Destroy(child.gameObject);
 			}
 

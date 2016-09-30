@@ -10,19 +10,17 @@ public class Level01BrickSpawner : MonoBehaviour {
 	public float spawnDelay = 2f;
 
 
-
 	private Vector3 brickPositionSpawn;
 
 	private float brickXOffset = 2f;
 	private float brickXpos = 1f;
-
-
+	private float brickXposIpad = -1f;
 
 	private float brickYOffset = 0.60f;
 	private float brickYpos = 13f;
 
-
-
+	private int numBricksToSpawn = 4;
+	private int numBricksToSpawnIpad = 6;
 	
 	// colors to choose  from randomly
 	private Color color1 = new Color(.900f, .700f, .100f, 1f); // 229.50   178.50    25.50 - this is the yellowish color
@@ -31,9 +29,6 @@ public class Level01BrickSpawner : MonoBehaviour {
 	// for the color conversions, I used this site: http://www.easyrgb.com/index.php?X=CALC#Result
 	
 	private Color[] colorsArray;
-
-
-
 
 
 	// Use this for initialization
@@ -48,8 +43,13 @@ public class Level01BrickSpawner : MonoBehaviour {
 		if (Screen.height == 960) {
 			brickYpos = 12f;
 		}
-	
 
+		if (Screen.height == 1024) {
+			brickXpos = brickXposIpad;
+			numBricksToSpawn = numBricksToSpawnIpad;
+		}
+
+	
 		// if this is the start screen, spawn the bricks for decoration.
 		if (SceneManager.GetActiveScene().name == "Level01") {			
 			// run the function that spawns bricks and scrolls the sideways. 
@@ -72,7 +72,7 @@ public class Level01BrickSpawner : MonoBehaviour {
 	public void SpawnBricks() { 
 		
 		// spawn the positions across the y access
-		for (float x = 0; x < 4; x++) {
+		for (float x = 0; x < numBricksToSpawn; x++) {
 			
 			brickPositionSpawn = new Vector3(brickXpos, brickYpos, -1f);
 			GameObject positionSpawn = Instantiate(positionPrefab, brickPositionSpawn, Quaternion.identity) as GameObject;
@@ -104,11 +104,15 @@ public class Level01BrickSpawner : MonoBehaviour {
 			*/
 		}
 	
+		if (Screen.height == 1024) {
+			brickXpos = brickXposIpad;
+		} else {
+			// put the brick x position back to the start for the next row sapw
+			brickXpos = 1f;	
+			// brickYpos = 13f;
+		}
 		
-		
-		// put the brick x position back to the start for the next row sapw
-		brickXpos = 1f;	
-		// brickYpos = 13f;
+
 
 
 

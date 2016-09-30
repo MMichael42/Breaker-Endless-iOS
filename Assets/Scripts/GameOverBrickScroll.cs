@@ -148,7 +148,7 @@ public class GameOverBrickScroll : MonoBehaviour {
 
 			}
 
-			if (child.transform.position.x < -2f) {
+			if (child.transform.position.x < -3f) {
 				Destroy(child.gameObject);
 			}
 		}

@@ -149,7 +149,7 @@ public class BrickSpawner : MonoBehaviour {
 
 			}
 
-			if (child.transform.position.x > 10f) {
+			if (child.transform.position.x > 12f) {
 				Destroy(child.gameObject);
 			}
 
